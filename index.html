@@ -18,6 +18,7 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#journey" class="nav-link">Journey</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -34,21 +35,43 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <p class="hero-eyebrow">Full-stack engineer • Creative technologist • Open source advocate</p>
                 <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Rocky Shao</span>
+                    Building delightful products with <span class="highlight">clarity</span> and <span class="highlight">craft</span>
                 </h1>
                 <p class="hero-subtitle">
-                    A passionate developer creating amazing digital experiences
+                    I'm Rocky Shao, a developer obsessed with performance, polish, and playful user experiences. I turn ambitious ideas into production-ready products that people love to use.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary">Explore Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Start a Conversation</a>
+                    <a href="https://example.com/resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download Résumé</a>
+                </div>
+                <div class="hero-highlights">
+                    <div class="highlight-card">
+                        <span class="highlight-value">95%</span>
+                        <span class="highlight-label">Core Web Vitals on shipped apps</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-value">15k+</span>
+                        <span class="highlight-label">Developers using my OSS components</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-value">3x</span>
+                        <span class="highlight-label">Hackathon champion</span>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-card">
-                    <div class="profile-image">
-                        <i class="fas fa-user"></i>
+            <div class="hero-showcase">
+                <div class="showcase-card pacman-card">
+                    <div class="pacman-header">
+                        <span class="pacman-title"><i class="fas fa-gamepad"></i> Pac-Man Playground</span>
+                        <span class="pacman-instructions">Use your arrow keys</span>
+                    </div>
+                    <canvas id="pacmanCanvas" width="360" height="360" aria-label="Playable Pac-Man canvas"></canvas>
+                    <div class="pacman-hud">
+                        <div class="pacman-score">Score: <span id="pacmanScore">0</span></div>
+                        <div class="pacman-status" id="pacmanStatus">Collect every dot without getting caught!</div>
                     </div>
                 </div>
             </div>
@@ -87,6 +110,43 @@
                             <h3>100%</h3>
                             <p>Client Satisfaction</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey">
+        <div class="container">
+            <h2 class="section-title">Journey So Far</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <div class="timeline-content">
+                        <h3>Staff Engineer at Aurora Labs</h3>
+                        <p>Leading a platform team re-architecting a multi-tenant SaaS product, shipping design systems, and mentoring engineers across five time zones.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2023</span>
+                    <div class="timeline-content">
+                        <h3>Founder, PixelPulse</h3>
+                        <p>Bootstrapped a developer tooling startup from prototype to a profitable launch serving thousands of monthly active users.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2021</span>
+                    <div class="timeline-content">
+                        <h3>Full-stack Engineer, Horizon</h3>
+                        <p>Scaled a realtime collaboration suite, achieving a 40% performance boost while rolling out accessibility-first features.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2019</span>
+                    <div class="timeline-content">
+                        <h3>Graduated from UC Berkeley</h3>
+                        <p>B.S. in Computer Science with a focus on human-computer interaction and distributed systems.</p>
                     </div>
                 </div>
             </div>
