@@ -1,4 +1,3 @@
-
 const About = () => {
   return (
     <div className="content-container">
