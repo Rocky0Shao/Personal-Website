@@ -1,4 +1,4 @@
-# Rocky Shao - Personal Website
+
 
 A modern, responsive personal website built with HTML5, CSS3, and JavaScript. Features a beautiful design with smooth animations, mobile-first responsive layout, and interactive elements.
 
