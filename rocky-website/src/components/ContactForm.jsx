@@ -9,27 +9,27 @@ function ContactForm() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      setLoading(true);
 
-    // This sends the data to your 'contacts' table
-    const { error } = await supabase
-      .from('Contacts')
-      .insert([{ name, phone, email, message }]);
+      // This sends the data to your 'contacts' table
+      const { error } = await supabase
+        .from('Contacts')
+        .insert([{ name, phone, email, message }]);
 
-    if (error) {
-      alert("Error sending message: " + error.message);
-    } else {
-      alert(`Thank you, ${name}! Your message has been saved in Supabase.`);
-      setName('');
-      setPhone('');
-      setEmail('');
-      setMessage('');
-    }
-    
-    setLoading(false);
-  };
+      if (error) {
+        alert("Error sending message: " + error.message);
+      } else {
+        alert(`Thank you, ${name}! Your message has been sent.`);
+        setName('');
+        setPhone('');
+        setEmail('');
+        setMessage('');
+      }
+      
+      setLoading(false);
+    };
 
   return (
     <div className="form-container">

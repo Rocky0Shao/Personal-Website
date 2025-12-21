@@ -6,12 +6,14 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 import ThemeToggle from './components/ThemeToggle';
+import CursorTrail from './components/CursorTrail';
 
 function App() {
   return (
     <Router>
       <div className="app-container">
         <Navbar />
+        <CursorTrail />
         <ThemeToggle />
         <main>
           <Routes>
