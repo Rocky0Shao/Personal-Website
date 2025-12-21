@@ -5,11 +5,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+import ThemeToggle from './components/ThemeToggle';
+
 function App() {
   return (
     <Router>
       <div className="app-container">
         <Navbar />
+        <ThemeToggle />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

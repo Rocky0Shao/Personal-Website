@@ -1,13 +1,13 @@
-import { use } from "react";
+import { useState, useEffect } from "react";
 
 const ThemeToggle = () => {
-    cont [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
         if (isDarkMode) {
-            document.body.classList.add("dark-mode");
+            document.body.classList.add("dark-theme");
         } else {
-            document.body.classList.remove("dark-mode");
+            document.body.classList.remove("dark-theme");
         }
     }, [isDarkMode]);
 
