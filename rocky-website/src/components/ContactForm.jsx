@@ -1,23 +1,34 @@
 import { useState } from 'react';
+import { supabase } from '../supabaseClient'; // Make sure the path is correct
 import './ContactForm.css';
+
 function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, you would send this data to an API here
-    console.log({ name, phone, email, message });
+    setLoading(true);
+
+    // This sends the data to your 'contacts' table
+    const { error } = await supabase
+      .from('Contacts')
+      .insert([{ name, phone, email, message }]);
+
+    if (error) {
+      alert("Error sending message: " + error.message);
+    } else {
+      alert(`Thank you, ${name}! Your message has been saved in Supabase.`);
+      setName('');
+      setPhone('');
+      setEmail('');
+      setMessage('');
+    }
     
-    alert(`Thank you, ${name}! Your message has been sent.`);
-    
-    // Optional: Clear the form after submission
-    setName('');
-    setPhone('');
-    setEmail('');
-    setMessage('');
+    setLoading(false);
   };
 
   return (
@@ -67,11 +78,15 @@ function ContactForm() {
             rows="5"
             value={message} 
             onChange={(e) => setMessage(e.target.value)} 
-            placeholder="How can we help you?"
+            placeholder="What would you like to say?"
           ></textarea>
         </div>
 
-        <button type="submit" className="submit-btn">Send Message</button>
+
+
+        <button type="submit" className="submit-btn" disabled={loading}>
+  {loading ? 'Sending...' : 'Send Message'}
+</button>
       </form>
     </div>
   );
