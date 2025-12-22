@@ -1,15 +1,17 @@
 import './Headshot.css';
 
-import headshotImage from '../assets/Headshot.jpg'; // 1. Import the image
-
+import headshotImage from '../assets/Headshot.jpg'; 
+import { Link } from 'react-router-dom';
 const Headshot = () => {
   return (
     <div className="headshot-container">
-      <img 
-        src={headshotImage} 
-        alt="Headshot" 
-        className="headshot-img" 
-      />
+      <Link to="/about">
+        <img 
+          src={headshotImage} 
+          alt="Headshot" 
+          className="headshot-img" 
+        />
+      </Link>
     </div>
   );
 };
