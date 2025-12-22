@@ -1,16 +1,16 @@
-/* CV.css */
+
 
 .cv-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  font-family: sans-serif;
+  color: var(--text-color); 
 }
 
 .cv-title {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--text-color); 
 }
 
 .cv-iframe {
@@ -18,7 +18,8 @@
   height: 600px;
   border: none;
   margin-bottom: 20px;
-  background-color: #f4f4f4; /* Subtle placeholder background */
+  background-color: var(--container-background); 
+  border: 1px solid var(--border-color);
 }
 
 .cv-action-area {
@@ -29,14 +30,19 @@
 .cv-download-btn {
   padding: 10px 20px;
   cursor: pointer;
-  background-color: #333;
-  color: white;
-  border: none;
+
+  background-color: var(--text-color); 
+  
+  color: var(--container-background);
+  
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   font-size: 16px;
-  transition: background-color 0.2s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .cv-download-btn:hover {
-  background-color: #555;
+  opacity: 0.8;
+  text-decoration: none;
 }
