@@ -15,7 +15,7 @@ const CV = () => {
 
       {/* Fallback/Action Link */}
       <div style={{ textAlign: 'center' }}>
-        <a href={resume} download="My_Name_Resume.pdf">
+        <a href={resume} download="RockyShao_Resume.pdf">
           <button style={{ padding: '10px 20px', cursor: 'pointer' }}>
             Download PDF
           </button>
