@@ -4,6 +4,7 @@ const Home = () => {
     <div className="content-container">
       <h1>Home Page</h1>
       <p>Welcome to my personal website!</p>
+      <p>Click on my headshot to learn more!</p>
       <Headshot />
     </div>
     );
