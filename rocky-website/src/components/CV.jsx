@@ -1,22 +1,18 @@
+import './CV.css'; // Import the CSS file
 import resume from '../assets/resume.pdf';
+
 const CV = () => {
   return (
-    <div className="cv-container">
-      <h1>Curriculum Vitae</h1>
-      
-      {/* The Embedded PDF */}
+    <div className="cv-container">      
       <iframe 
         src={resume} 
-        width="100%" 
-        height="600px" 
-        style={{ border: 'none', marginBottom: '20px' }}
-        title="My CV"
+        className="cv-iframe"
+        title="RockyShao_Resume"
       />
 
-      {/* Fallback/Action Link */}
-      <div style={{ textAlign: 'center' }}>
+      <div className="cv-action-area">
         <a href={resume} download="RockyShao_Resume.pdf">
-          <button style={{ padding: '10px 20px', cursor: 'pointer' }}>
+          <button className="cv-download-btn">
             Download PDF
           </button>
         </a>
