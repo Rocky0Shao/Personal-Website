@@ -1,17 +1,18 @@
-import './CV.css'; // Import the CSS file
-import resume from '../assets/resume.pdf';
+import './CV.css';
 
 const CV = () => {
+  const resumePath = '/resume.pdf';
+
   return (
-    <div className="cv-container">      
-      <iframe 
-        src={resume} 
+    <div className="cv-container">
+      <iframe
+        src={resumePath}
         className="cv-iframe"
         title="RockyShao_Resume"
       />
 
       <div className="cv-action-area">
-        <a href={resume} download="RockyShao_Resume.pdf">
+        <a href={resumePath} download="RockyShao_Resume.pdf">
           <button className="cv-download-btn">
             Download PDF
           </button>
