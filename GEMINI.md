@@ -1,5 +1,3 @@
-# GEMINI.md
-
 ## Project Overview
 
 This is a **Personal Website** project built with **React** and **Vite**. It is based on the standard `vite-react` template, providing a minimal setup for a modern web application.
