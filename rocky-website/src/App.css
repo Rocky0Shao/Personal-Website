@@ -1,21 +1,40 @@
-/* src/App.css */
+/* App Container */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Main Content */
 main {
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  padding: 2rem;
 }
 
+/* Page Transitions */
+.page-transition {
+  width: 100%;
+  animation: pageEnter 0.5s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Legacy Content Container (for backward compatibility) */
 .content-container {
   width: 100%;
   max-width: 800px;
   text-align: left;
+  padding: 2rem;
 }
 
 .content-container h1,
@@ -34,15 +53,56 @@ main {
   padding-left: 20px;
 }
 
+/* Theme Toggle Button */
 .theme-toggle-button {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  padding: 10px 15px;
+  padding: 12px 16px;
   border-radius: 50px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   cursor: pointer;
-  background-color: var(--button-bg);
+  background: var(--container-background);
   color: var(--text-color);
-  z-index: 1000; /* Keeps it on top of other elements */
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
+/* Scroll Reveal Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }

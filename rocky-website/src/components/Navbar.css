@@ -1,27 +1,93 @@
-/* src/components/Navbar.css */
-nav {
+/* Navbar */
+.navbar {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1.5rem;
-  background-color: transparent;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(var(--container-background-rgb, 255, 255, 255), 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-nav a {
-  font-size: 1rem;
+/* Brand */
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.brand-link {
+  background: linear-gradient(135deg, var(--accent-color), #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.brand-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-color);
   text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--link-hover-color);
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), #00d4aa);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
   text-decoration: none;
 }
 
-nav a.active {
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
   color: var(--accent-color);
-  text-decoration: none;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
 }
