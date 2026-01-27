@@ -1,46 +1,114 @@
-.form-container {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: var(--container-background);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
+/* Contact Form */
+.contact-form {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+}
+
+/* Form Row (side by side inputs) */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .form-group label {
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-color);
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
-  padding: 0.8rem;
-  border-radius: 4px;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
   border: 1px solid var(--border-color);
-  background-color: var(--background-color);
+  background: var(--background-color);
   color: var(--text-color);
   font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
 }
 
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 166, 126, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-color);
+  opacity: 0.4;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit Button */
 .submit-btn {
-  width: 100%;
-  padding: 1rem;
-  background-color: var(--accent-color);
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-color), #00d4aa);
   color: white;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 
-.submit-btn:hover {
-  opacity: 0.9;
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 166, 126, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
